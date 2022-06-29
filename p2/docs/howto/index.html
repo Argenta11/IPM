@@ -1,0 +1,385 @@
+<!doctype html>
+
+<html lang="es">
+
+  
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Enunciado de la práctica">
+  <meta name="author" content="David Cabrero Souto">
+
+  <title>¿ Cómo realizar la práctica ?</title>
+
+  <link href="../css/paper.min.css" rel="stylesheet">
+  <!-- workaround para no modificar paper.css -->
+  <style>
+  li > p:first-child { display: inline; }
+
+  nav a { border: 0; }
+  .nav-brand img { border: 0; height: 1em; }
+  </style>
+</head>
+
+
+<body class="is-preload">
+     
+<!-- Wrapper -->
+<div class="paper">
+  <!-- Main -->
+  <div class="paper container margin-bottom-large">
+    <nav class="border">
+      <div class="nav-brand">
+        <h3>
+          <a href="https://campusvirtual.udc.gal/course/view.php?id=14842"><img src="../img/logo.png"/></a></li>
+        </h3>
+      </div>
+      <div class="collapsible-body">
+        <ul class="inline">
+          <li>
+            <a href="/"><strong>IPM 2020/2021</strong> Práctica 2</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Header -->
+    <header id="header">
+      
+    </header>
+
+
+    <article class="article">
+  <h1 class="article-title">¿ Cómo realizar la práctica ?</h1>
+  <span class="image main"><img src="..//img/pexels-christina-morillo-1181622.jpg" alt="" /></span>
+  <h2>Objetivo</h2>
+<p>En esta práctica tienes que desarrollar una aplicación gráfica para
+móviles, aplicando los conocimientos adquiridos sobre el desarrollo
+de interfaces gráficas de usuaria.</p>
+<h2>Metodología</h2>
+<p>La práctica se compone de una serie de tareas que tendrás que realizar
+en la secuencia indicada.</p>
+<p>Aunque la práctica está dividida en una secuencia de tareas, no hemos
+entrado en una máquina del tiempo para viajar a la prehistoria de la
+informática y usar una metodología <em>waterfall</em>. Durante la realización
+de cada una de las tareas es más que probable que tengamos que
+actualizar, corregir y/o mejorar algunos de los artefactos
+desarrollados en tareas previas.</p>
+<h2>Control de versiones</h2>
+<p>Usaremos un <a href="https://en.wikipedia.org/wiki/Version_control">control de
+versiones</a> durante todo
+el desarrollo de la práctica.</p>
+<p>Esto quiere decir que, en nuestro directorio de trabajo, de ninguna
+manera puede haber distintos ficheros con distintas versiones del
+mismo elemento.</p>
+<h2>Repositorio</h2>
+<p>Si estas leyendo esta documentación debería ser porque has creado el
+<em>assignment</em> correspondiente en <em>github classroom</em> y por tanto ya
+tienes el repositorio necesario para realizar la práctica. Si no es
+así, ve al campus virtual y, en la asignatura, sigue el enlace
+correspondiente.</p>
+<h2>Planificación</h2>
+<p>A <em>grosso modo</em> la práctica consta de cuatro tareas y tiene estimada
+una duración de cuatro semanas. Por tanto la primera aproximación es
+de una tarea por semana.</p>
+<p>Como parte de los aspectos que se valoran en la realización de la
+práctica se encuentra la capacidad para ajustarse a los plazos
+establecidos.</p>
+<p>Las tareas en que se estructura la práctica son las siguientes:</p>
+<ul>
+<li>Diseño de la interface</li>
+<li>Diseño sw e implementación del primer caso de uso</li>
+<li>Diseño sw e implementación del segundo caso de uso</li>
+<li>Internacionalización</li>
+</ul>
+<h2>Autoevaluación</h2>
+<p>Cada tarea incluye un apartado con una tabla de guía para la
+autoevaluación del trabajo que has realizado. Utiliza esas tablas para
+detectar las carencias y fortalezas de tu trabajo.</p>
+<p>Estas tablas no son excluyentes. Cada tarea puede incluir aspectos de
+las tareas anteriores. Por ejemplo, en la tarea 3 podrías encontrar
+carencias a corregir sobre el diseño de la tarea 1. Utiliza las tablas de las tareas
+anteriores para autoevaluar dichos aspectos.</p>
+<h2>Descripción de la aplicación</h2>
+<p>La aplicación que tienes que desarrollar forma parte de un sistema de
+control de accesos covid-19. El sistema consta de los siguientes
+contenedores:</p>
+<ul>
+<li>
+<p>Una B.D. donde se almacena información de las instalaciones,
+entidades, miembros de las entidades, fechas de acceso a las
+instalaciones, etc.</p>
+</li>
+<li>
+<p>Un servidor que proporciona acceso a la B.D. mediante un api tipo
+REST.</p>
+</li>
+<li>
+<p>Una aplicación web que permite a las usuarias del sistema las
+operaciones habituales de alta en el sistema, consulta y
+modificación de información personal, etc.</p>
+</li>
+<li>
+<p>Una aplicación móbil que permite el registro de los accesos a las
+instalaciones mediante códigos QR.</p>
+</li>
+<li>
+<p>La aplicación de escritorio que desarrollas en esta práctica.</p>
+</li>
+</ul>
+<p>La aplicación realiza consultas directamente a la B.D. y muestra los
+resultados, todo a través de una interface gráfica.</p>
+<h3>Usuaria objetivo</h3>
+<pre><code>Usuaria: Responsable COVID.
+
+Una de las tareas del responsable COVID es el control del acceso
+a las instalaciones bajo su supervisión. El control incluye anotar
+las personas que hacen uso de la instalación durante distintos tipos
+de eventos: entrenamientos, conciertos, congresos, ... 
+</code></pre>
+<h3>Requisitos no funcionales</h3>
+<pre><code>Plataforma de ejecución: android o iOS
+
+Lenguaje de programación: dart
+
+Librería gráfica: flutter
+</code></pre>
+<h3>Requisitos funcionales</h3>
+<p>La aplicación incluye los siguientes casos de uso:</p>
+<pre><code>Anotar la entrada/salida de una persona
+	Permite anotar la fecha, hora de entrada, hora de salida y temperatura al entrar
+    de una persona. La identificación de la persona se realiza a partir del código QR
+    que posee dicha persona.
+</code></pre>
+<p>La identificación de una persona se realiza a partir de su código
+QR. Esto quiere decir que la persona usuaria de la instalación dispone
+de un código QR en la pantalla de su móvil, impreso, ...  El
+responsable COVID (la usuaria de la aplicación) antes de permitir el
+acceso a la instalación, escaneará el código QR con la aplicación y
+obtendrá los datos de la persona del servidor. A continuación anotará
+en la aplicación los datos de la persona usuaria, la fecha y hora de
+entrada y la temperatura.</p>
+<p>Cuando la persona usuaria abandone la instalación, el responsable
+COVID anotará la fecha y hora de salida.</p>
+<pre><code>Gestionar la lista de personas asistentes durante un evento
+    Permite consultar la lista de personas que han entrado/salido de la instalación
+    durante un evento. El inicio y fin de un evento lo marca la propia usuaria de
+    la aplicación.
+</code></pre>
+<p>La usuaria de la aplicación puede consultar en cualquier momento la lista de personas
+que están o han hecho uso de la aplicación, y alguna información derivada. En concreto
+es muy interesante el número de personas que están en la instalación y el número total
+de personas que accedieron a la instalación.</p>
+<p>También, como parte de los casos de uso, la aplicación tiene que
+gestionar los problemas creados tanto por la usuaria de la aplicación
+como por las personas usuarias de la instalación. En concreto:</p>
+<ul>
+<li>
+<p>Se olvida de registrar la entrada y/o la salida de una persona.</p>
+<p>En este caso hay que ofrecer una alternativa para anotar la entrada/salida
+en una hora concreta, distinta a la actual.</p>
+</li>
+<li>
+<p>La persona usuaria ha olvidado su código QR.</p>
+<p>En este caso hay que ofrecer una alternativa para introducir sus
+datos manualmente.</p>
+</li>
+</ul>
+<p>La información registrada durante el uso de la aplicación se debe
+enviar al servidor. Dado que se trata de una aplicación para
+dispositivos móviles, es necesario que consideres la optimización de
+las comunicaciones, i.e. las peticiones al servidor.</p>
+<p>Recuerda que los códigos QR están asociados a una persona e incluyen la siguiente
+información: nombre, apellidos, uuid de su entrada en la BD.</p>
+<pre><code>La información incluida en el QR es común para todos los componentes del sistema.
+Es un string con el siguiente formato: &quot;{nombre},{apellidos},{uuid}&quot;
+</code></pre>
+<blockquote>
+<p>N.B.: Esta app organiza el registro de acceso en base a eventos. Es
+la propia usuaria de la app la que marca el inicio y fin de un
+evento. Sin embargo, en la B.D. no se guarda ninguna información de
+los eventos en sí mismos, sólo se guardan los registros de entrada y
+salida.</p>
+</blockquote>
+<p><a href="../tarea_1" class="paper-btn">Siguiente: Tarea 1</a></p>
+
+</article>
+
+<!-- Content
+<section>
+  <header class="main">
+    <h1>¿ Cómo realizar la práctica ?</h1>
+  </header>
+
+  <span class="image main"><img src="..//img/pexels-christina-morillo-1181622.jpg" alt="" /></span>
+  
+  <h2>Objetivo</h2>
+<p>En esta práctica tienes que desarrollar una aplicación gráfica para
+móviles, aplicando los conocimientos adquiridos sobre el desarrollo
+de interfaces gráficas de usuaria.</p>
+<h2>Metodología</h2>
+<p>La práctica se compone de una serie de tareas que tendrás que realizar
+en la secuencia indicada.</p>
+<p>Aunque la práctica está dividida en una secuencia de tareas, no hemos
+entrado en una máquina del tiempo para viajar a la prehistoria de la
+informática y usar una metodología <em>waterfall</em>. Durante la realización
+de cada una de las tareas es más que probable que tengamos que
+actualizar, corregir y/o mejorar algunos de los artefactos
+desarrollados en tareas previas.</p>
+<h2>Control de versiones</h2>
+<p>Usaremos un <a href="https://en.wikipedia.org/wiki/Version_control">control de
+versiones</a> durante todo
+el desarrollo de la práctica.</p>
+<p>Esto quiere decir que, en nuestro directorio de trabajo, de ninguna
+manera puede haber distintos ficheros con distintas versiones del
+mismo elemento.</p>
+<h2>Repositorio</h2>
+<p>Si estas leyendo esta documentación debería ser porque has creado el
+<em>assignment</em> correspondiente en <em>github classroom</em> y por tanto ya
+tienes el repositorio necesario para realizar la práctica. Si no es
+así, ve al campus virtual y, en la asignatura, sigue el enlace
+correspondiente.</p>
+<h2>Planificación</h2>
+<p>A <em>grosso modo</em> la práctica consta de cuatro tareas y tiene estimada
+una duración de cuatro semanas. Por tanto la primera aproximación es
+de una tarea por semana.</p>
+<p>Como parte de los aspectos que se valoran en la realización de la
+práctica se encuentra la capacidad para ajustarse a los plazos
+establecidos.</p>
+<p>Las tareas en que se estructura la práctica son las siguientes:</p>
+<ul>
+<li>Diseño de la interface</li>
+<li>Diseño sw e implementación del primer caso de uso</li>
+<li>Diseño sw e implementación del segundo caso de uso</li>
+<li>Internacionalización</li>
+</ul>
+<h2>Autoevaluación</h2>
+<p>Cada tarea incluye un apartado con una tabla de guía para la
+autoevaluación del trabajo que has realizado. Utiliza esas tablas para
+detectar las carencias y fortalezas de tu trabajo.</p>
+<p>Estas tablas no son excluyentes. Cada tarea puede incluir aspectos de
+las tareas anteriores. Por ejemplo, en la tarea 3 podrías encontrar
+carencias a corregir sobre el diseño de la tarea 1. Utiliza las tablas de las tareas
+anteriores para autoevaluar dichos aspectos.</p>
+<h2>Descripción de la aplicación</h2>
+<p>La aplicación que tienes que desarrollar forma parte de un sistema de
+control de accesos covid-19. El sistema consta de los siguientes
+contenedores:</p>
+<ul>
+<li>
+<p>Una B.D. donde se almacena información de las instalaciones,
+entidades, miembros de las entidades, fechas de acceso a las
+instalaciones, etc.</p>
+</li>
+<li>
+<p>Un servidor que proporciona acceso a la B.D. mediante un api tipo
+REST.</p>
+</li>
+<li>
+<p>Una aplicación web que permite a las usuarias del sistema las
+operaciones habituales de alta en el sistema, consulta y
+modificación de información personal, etc.</p>
+</li>
+<li>
+<p>Una aplicación móbil que permite el registro de los accesos a las
+instalaciones mediante códigos QR.</p>
+</li>
+<li>
+<p>La aplicación de escritorio que desarrollas en esta práctica.</p>
+</li>
+</ul>
+<p>La aplicación realiza consultas directamente a la B.D. y muestra los
+resultados, todo a través de una interface gráfica.</p>
+<h3>Usuaria objetivo</h3>
+<pre><code>Usuaria: Responsable COVID.
+
+Una de las tareas del responsable COVID es el control del acceso
+a las instalaciones bajo su supervisión. El control incluye anotar
+las personas que hacen uso de la instalación durante distintos tipos
+de eventos: entrenamientos, conciertos, congresos, ... 
+</code></pre>
+<h3>Requisitos no funcionales</h3>
+<pre><code>Plataforma de ejecución: android o iOS
+
+Lenguaje de programación: dart
+
+Librería gráfica: flutter
+</code></pre>
+<h3>Requisitos funcionales</h3>
+<p>La aplicación incluye los siguientes casos de uso:</p>
+<pre><code>Anotar la entrada/salida de una persona
+	Permite anotar la fecha, hora de entrada, hora de salida y temperatura al entrar
+    de una persona. La identificación de la persona se realiza a partir del código QR
+    que posee dicha persona.
+</code></pre>
+<p>La identificación de una persona se realiza a partir de su código
+QR. Esto quiere decir que la persona usuaria de la instalación dispone
+de un código QR en la pantalla de su móvil, impreso, ...  El
+responsable COVID (la usuaria de la aplicación) antes de permitir el
+acceso a la instalación, escaneará el código QR con la aplicación y
+obtendrá los datos de la persona del servidor. A continuación anotará
+en la aplicación los datos de la persona usuaria, la fecha y hora de
+entrada y la temperatura.</p>
+<p>Cuando la persona usuaria abandone la instalación, el responsable
+COVID anotará la fecha y hora de salida.</p>
+<pre><code>Gestionar la lista de personas asistentes durante un evento
+    Permite consultar la lista de personas que han entrado/salido de la instalación
+    durante un evento. El inicio y fin de un evento lo marca la propia usuaria de
+    la aplicación.
+</code></pre>
+<p>La usuaria de la aplicación puede consultar en cualquier momento la lista de personas
+que están o han hecho uso de la aplicación, y alguna información derivada. En concreto
+es muy interesante el número de personas que están en la instalación y el número total
+de personas que accedieron a la instalación.</p>
+<p>También, como parte de los casos de uso, la aplicación tiene que
+gestionar los problemas creados tanto por la usuaria de la aplicación
+como por las personas usuarias de la instalación. En concreto:</p>
+<ul>
+<li>
+<p>Se olvida de registrar la entrada y/o la salida de una persona.</p>
+<p>En este caso hay que ofrecer una alternativa para anotar la entrada/salida
+en una hora concreta, distinta a la actual.</p>
+</li>
+<li>
+<p>La persona usuaria ha olvidado su código QR.</p>
+<p>En este caso hay que ofrecer una alternativa para introducir sus
+datos manualmente.</p>
+</li>
+</ul>
+<p>La información registrada durante el uso de la aplicación se debe
+enviar al servidor. Dado que se trata de una aplicación para
+dispositivos móviles, es necesario que consideres la optimización de
+las comunicaciones, i.e. las peticiones al servidor.</p>
+<p>Recuerda que los códigos QR están asociados a una persona e incluyen la siguiente
+información: nombre, apellidos, uuid de su entrada en la BD.</p>
+<pre><code>La información incluida en el QR es común para todos los componentes del sistema.
+Es un string con el siguiente formato: &quot;{nombre},{apellidos},{uuid}&quot;
+</code></pre>
+<blockquote>
+<p>N.B.: Esta app organiza el registro de acceso en base a eventos. Es
+la propia usuaria de la app la que marca el inicio y fin de un
+evento. Sin embargo, en la B.D. no se guarda ninguna información de
+los eventos en sí mismos, sólo se guardan los registros de entrada y
+salida.</p>
+</blockquote>
+<p><a href="../tarea_1" class="paper-btn">Siguiente: Tarea 1</a></p>
+
+  
+</section>
+	-->
+
+
+
+    <!-- Footer -->
+    <footer id="footer">
+      <p>&copy; David Cabrero. All rights reserved. Images: <a href="https://www.pexels.com/es-es/foto/seis-mujeres-de-pie-y-sentadas-dentro-de-la-habitacion-1181622/">Christina Morillo</a>. CSS: <a href="https://www.getpapercss.com/">Paper CSS</a>.</p>
+    </footer>
+
+  </div>
+</div>
+
+
+</body>
+
+
+</html>

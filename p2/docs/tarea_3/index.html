@@ -1,0 +1,341 @@
+<!doctype html>
+
+<html lang="es">
+
+  
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Enunciado de la práctica">
+  <meta name="author" content="David Cabrero Souto">
+
+  <title>Tarea 3: Diseño sw e implementación del segundo caso de uso</title>
+
+  <link href="../css/paper.min.css" rel="stylesheet">
+  <!-- workaround para no modificar paper.css -->
+  <style>
+  li > p:first-child { display: inline; }
+
+  nav a { border: 0; }
+  .nav-brand img { border: 0; height: 1em; }
+  </style>
+</head>
+
+
+<body class="is-preload">
+     
+<!-- Wrapper -->
+<div class="paper">
+  <!-- Main -->
+  <div class="paper container margin-bottom-large">
+    <nav class="border">
+      <div class="nav-brand">
+        <h3>
+          <a href="https://campusvirtual.udc.gal/course/view.php?id=14842"><img src="../img/logo.png"/></a></li>
+        </h3>
+      </div>
+      <div class="collapsible-body">
+        <ul class="inline">
+          <li>
+            <a href="/"><strong>IPM 2020/2021</strong> Práctica 2</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Header -->
+    <header id="header">
+      
+    </header>
+
+
+    <article class="article">
+  <h1 class="article-title">Tarea 3: Diseño sw e implementación del segundo caso de uso</h1>
+  <span class="image main"><img src="../img/pexels-andrew-neel-6633920.jpg" alt="" /></span>
+  <p>En esta tarea tienes que realizar la parte central del desarrollo
+software: el diseño software y su implementación.</p>
+<blockquote>
+<p>Recuerda: El desarrollo software es un proceso iterativo. Es normal
+que durante la realización de esta tarea decidas añadir, eliminar o
+modificar partes del diseño de la interface. Si es el caso, no te
+olvides de actualizar los ficheros correspondendientes.</p>
+</blockquote>
+<p>No olvides que tu diseño software se tiene que basar en el principo de
+separar el estado de la vista. Consulta las distintas alternativas
+habituales para <em>flutter</em> (<em>flutter state managment</em>) y elige la que
+consideres más adecuada para tu aplicación.</p>
+<p>Al contrario de lo que ocurre con el diseño de la interface, para el
+diseño sw sí que existe un estándar establecido: UML. Emplea este
+lenguaje para crear los diagramas tanto estáticos como
+dinámicos.</p>
+<p>Basándote en tu diseño sw, implementa la aplicación. No olvides que
+además de los problemas considerados en la descripción del caso de
+uso, también tiene que gestionar otros errores. Por ejemplo, teniendo
+en cuenta que la aplicación tiene que conectarse con la BD, algunos
+errores esperables son:</p>
+<ul>
+<li>
+<p>No es posible conectarse con el servidor.</p>
+</li>
+<li>
+<p>El servidor no responde.</p>
+</li>
+<li>
+<p>El servidor devuelve un mensaje de error.</p>
+</li>
+</ul>
+<h2>Requisitos</h2>
+<p>Recuerda que el caso de uso a desarrollar es:</p>
+<pre><code>Gestionar la lista de personas asistentes durante un evento
+    Permite consultar la lista de personas que han entrado/salido de la instalación
+    durante un evento. El inicio y fin de un evento lo marca la propia usuaria de
+    la aplicación.
+</code></pre>
+<p>Tal y como se describe en la sección <a
+href="../howto" class="button big">Cómo realizar la
+práctica</a></p>
+<p>Además de lo indicado en el apartado anterior y en las tareas
+anteriores, tienes que cumplir los siguientes requisitos:</p>
+<ul>
+<li>
+<p>Los resultados de esta tarea incluyen los diagramas UML y el
+código de la aplicación.</p>
+</li>
+<li>
+<p>Los diagramas siguen el estándar UML y se entregan, al menos, en
+formato pdf. Los diagramas pueden estar distribuidos en cualquier
+número de ficheros.</p>
+</li>
+<li>
+<p>El diseño de la interface está actualizado.</p>
+</li>
+</ul>
+<h2>Autoevaluación</h2>
+<p>Para realizar una autoevaluación de esta tarea, puedes guiarte por las
+tablas de las tareas anteriores y la siguiente tabla:</p>
+<table>
+<thead>
+<tr>
+<th>Criterios</th>
+<th>Nivel</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>Bueno</td>
+<td>Inadecuado</td>
+</tr>
+<tr>
+<td>Cumple los requisitos de la lista proporcionada</td>
+<td>Cumple todos los requisitos</td>
+<td>No cumple algún requisito</td>
+</tr>
+<tr>
+<td>El diseño sw está bien expresado</td>
+<td>Se ajusta al estándar UML y cada artefacto se usa según su significado</td>
+<td>No sigue el estándar UML</td>
+</tr>
+<tr>
+<td>El diseño sw separa estado e interface</td>
+<td>Aplica alguna de las opciones de <em>state managment</em> de flutter</td>
+<td>Existen dependencias entre el estado y la interface</td>
+</tr>
+<tr>
+<td>El diseño sw incluye diagramas estáticos y dinámicos</td>
+<td>Existen diagramas tanto estáticos (p.e diagrama de clases) como dinámicos (p.e. diagrama de secuencia)</td>
+<td>Faltan los diagramas estáticos o los dinámicos</td>
+</tr>
+<tr>
+<td>El diseño sw es suficiente</td>
+<td>El diseño incluye todos los elementos necesarios para realizar la implementación</td>
+<td>La implementación incluye elementos que no se corresponden con el diseño sw</td>
+</tr>
+<tr>
+<td>La implementación sigue el diseño de la interface</td>
+<td>La interface de la aplicación implementada coincide con el diseño de la interface</td>
+<td>Existen discrepancias entre el diseño de la interface y la implementación</td>
+</tr>
+<tr>
+<td>La aplicación gestiona los errores</td>
+<td>La aplicación captura los errores e informa convenientemente a la usuaria</td>
+<td>Los errores provoca mal funcionamiento de la aplicación, son ignorados o no se informa convenientemente a la usuaria</td>
+</tr>
+<tr>
+<td>La aplicación gestiona los fallos humanos</td>
+<td>La aplicación ofrece alternativas en los casos de error humano descritos</td>
+<td>En caso de error humano, no es posible completar el uso de la app</td>
+</tr>
+<tr>
+<td>La implementación es correcta</td>
+<td>Se ejecuta sin fallos en todos los casos</td>
+<td>La ejecución falla para algún caso</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Recuerda que el profesor sólo evaluará los ficheros que están en tu
+repositorio de <em>github classroom</em>. Es más seguro que tú también
+autoevalues tu trabajo sobre un <em>clone</em> de ese repositorio.</p>
+</blockquote>
+<p><a href="../tarea_4" class="paper-btn">Siguiente: Tarea 4</a></p>
+
+</article>
+
+<!-- Content
+<section>
+  <header class="main">
+    <h1>Tarea 3: Diseño sw e implementación del segundo caso de uso</h1>
+  </header>
+
+  <span class="image main"><img src="../img/pexels-andrew-neel-6633920.jpg" alt="" /></span>
+  
+  <p>En esta tarea tienes que realizar la parte central del desarrollo
+software: el diseño software y su implementación.</p>
+<blockquote>
+<p>Recuerda: El desarrollo software es un proceso iterativo. Es normal
+que durante la realización de esta tarea decidas añadir, eliminar o
+modificar partes del diseño de la interface. Si es el caso, no te
+olvides de actualizar los ficheros correspondendientes.</p>
+</blockquote>
+<p>No olvides que tu diseño software se tiene que basar en el principo de
+separar el estado de la vista. Consulta las distintas alternativas
+habituales para <em>flutter</em> (<em>flutter state managment</em>) y elige la que
+consideres más adecuada para tu aplicación.</p>
+<p>Al contrario de lo que ocurre con el diseño de la interface, para el
+diseño sw sí que existe un estándar establecido: UML. Emplea este
+lenguaje para crear los diagramas tanto estáticos como
+dinámicos.</p>
+<p>Basándote en tu diseño sw, implementa la aplicación. No olvides que
+además de los problemas considerados en la descripción del caso de
+uso, también tiene que gestionar otros errores. Por ejemplo, teniendo
+en cuenta que la aplicación tiene que conectarse con la BD, algunos
+errores esperables son:</p>
+<ul>
+<li>
+<p>No es posible conectarse con el servidor.</p>
+</li>
+<li>
+<p>El servidor no responde.</p>
+</li>
+<li>
+<p>El servidor devuelve un mensaje de error.</p>
+</li>
+</ul>
+<h2>Requisitos</h2>
+<p>Recuerda que el caso de uso a desarrollar es:</p>
+<pre><code>Gestionar la lista de personas asistentes durante un evento
+    Permite consultar la lista de personas que han entrado/salido de la instalación
+    durante un evento. El inicio y fin de un evento lo marca la propia usuaria de
+    la aplicación.
+</code></pre>
+<p>Tal y como se describe en la sección <a
+href="../howto" class="button big">Cómo realizar la
+práctica</a></p>
+<p>Además de lo indicado en el apartado anterior y en las tareas
+anteriores, tienes que cumplir los siguientes requisitos:</p>
+<ul>
+<li>
+<p>Los resultados de esta tarea incluyen los diagramas UML y el
+código de la aplicación.</p>
+</li>
+<li>
+<p>Los diagramas siguen el estándar UML y se entregan, al menos, en
+formato pdf. Los diagramas pueden estar distribuidos en cualquier
+número de ficheros.</p>
+</li>
+<li>
+<p>El diseño de la interface está actualizado.</p>
+</li>
+</ul>
+<h2>Autoevaluación</h2>
+<p>Para realizar una autoevaluación de esta tarea, puedes guiarte por las
+tablas de las tareas anteriores y la siguiente tabla:</p>
+<table>
+<thead>
+<tr>
+<th>Criterios</th>
+<th>Nivel</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>Bueno</td>
+<td>Inadecuado</td>
+</tr>
+<tr>
+<td>Cumple los requisitos de la lista proporcionada</td>
+<td>Cumple todos los requisitos</td>
+<td>No cumple algún requisito</td>
+</tr>
+<tr>
+<td>El diseño sw está bien expresado</td>
+<td>Se ajusta al estándar UML y cada artefacto se usa según su significado</td>
+<td>No sigue el estándar UML</td>
+</tr>
+<tr>
+<td>El diseño sw separa estado e interface</td>
+<td>Aplica alguna de las opciones de <em>state managment</em> de flutter</td>
+<td>Existen dependencias entre el estado y la interface</td>
+</tr>
+<tr>
+<td>El diseño sw incluye diagramas estáticos y dinámicos</td>
+<td>Existen diagramas tanto estáticos (p.e diagrama de clases) como dinámicos (p.e. diagrama de secuencia)</td>
+<td>Faltan los diagramas estáticos o los dinámicos</td>
+</tr>
+<tr>
+<td>El diseño sw es suficiente</td>
+<td>El diseño incluye todos los elementos necesarios para realizar la implementación</td>
+<td>La implementación incluye elementos que no se corresponden con el diseño sw</td>
+</tr>
+<tr>
+<td>La implementación sigue el diseño de la interface</td>
+<td>La interface de la aplicación implementada coincide con el diseño de la interface</td>
+<td>Existen discrepancias entre el diseño de la interface y la implementación</td>
+</tr>
+<tr>
+<td>La aplicación gestiona los errores</td>
+<td>La aplicación captura los errores e informa convenientemente a la usuaria</td>
+<td>Los errores provoca mal funcionamiento de la aplicación, son ignorados o no se informa convenientemente a la usuaria</td>
+</tr>
+<tr>
+<td>La aplicación gestiona los fallos humanos</td>
+<td>La aplicación ofrece alternativas en los casos de error humano descritos</td>
+<td>En caso de error humano, no es posible completar el uso de la app</td>
+</tr>
+<tr>
+<td>La implementación es correcta</td>
+<td>Se ejecuta sin fallos en todos los casos</td>
+<td>La ejecución falla para algún caso</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Recuerda que el profesor sólo evaluará los ficheros que están en tu
+repositorio de <em>github classroom</em>. Es más seguro que tú también
+autoevalues tu trabajo sobre un <em>clone</em> de ese repositorio.</p>
+</blockquote>
+<p><a href="../tarea_4" class="paper-btn">Siguiente: Tarea 4</a></p>
+
+  
+</section>
+	-->
+
+
+
+    <!-- Footer -->
+    <footer id="footer">
+      <p>&copy; David Cabrero. All rights reserved. Images: <a href="https://www.pexels.com/es-es/foto/apple-iphone-escritorio-ordenador-portatil-6633920/">Andrew Neel</a>. CSS: <a href="https://www.getpapercss.com/">Paper CSS</a>.</p>
+    </footer>
+
+  </div>
+</div>
+
+
+</body>
+
+
+</html>
