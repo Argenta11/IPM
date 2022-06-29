@@ -1,0 +1,301 @@
+<!doctype html>
+
+<html lang="es">
+
+  
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Enunciado de la práctica">
+  <meta name="author" content="David Cabrero Souto">
+
+  <title>Tarea 2: Implementar contenido y funcionalidad</title>
+
+  <link href="../css/paper.min.css" rel="stylesheet">
+  <!-- workaround para no modificar paper.css -->
+  <style>
+  li > p:first-child { display: inline; }
+
+  nav a { border: 0; }
+  .nav-brand img { border: 0; height: 1em; }
+  </style>
+</head>
+
+
+<body class="is-preload">
+     
+<!-- Wrapper -->
+<div class="paper">
+  <!-- Main -->
+  <div class="paper container margin-bottom-large">
+    <nav class="border">
+      <div class="nav-brand">
+        <h3>
+          <a href="https://campusvirtual.udc.gal/course/view.php?id=14842"><img src="../img/logo.png"/></a></li>
+        </h3>
+      </div>
+      <div class="collapsible-body">
+        <ul class="inline">
+          <li>
+            <a href="/"><strong>IPM 2020/2021</strong> Práctica 3</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Header -->
+    <header id="header">
+      
+    </header>
+
+
+    <article class="article">
+  <h1 class="article-title">Tarea 2: Implementar contenido y funcionalidad</h1>
+  <span class="image main"><img src="..//img/pexels-pixabay-270557.jpg" alt="" /></span>
+  <p>En esta tarea tienes que realizar una parte importante de la
+implementación de la aplicación.</p>
+<blockquote>
+<p>Recuerda: El desarrollo software es un proceso iterativo. Es normal
+que durante la realización de esta tarea decidas añadir, eliminar o
+modificar partes del diseño de la interface. Si es el caso, no te
+olvides de actualizar los ficheros correspondendientes.</p>
+</blockquote>
+<p>Para esta tarea implementarás:</p>
+<ul>
+<li>
+<p>Estructura y contenido de la interface. Es decir los documentos
+html que conforman la vista de la aplicación.</p>
+</li>
+<li>
+<p>Funcionalidad: el código javascript correspondiente a la parte
+del cliente, es decir, el navegador.</p>
+</li>
+</ul>
+<p>No incluyas ningún elemento de estilo (css). Tampoco puedes usar
+ninguna librería, framework, ...</p>
+<h2>Requisitos</h2>
+<p>Tienes que cumplir los requisitos indicados en los apartados y tareas
+anteriores, y además:</p>
+<ul>
+<li>
+<p>No usar ningún librería, framework, ...</p>
+</li>
+<li>
+<p>Los documentos html cumplen el estándar html5. El validador del
+W3C no detecta ningún error.</p>
+</li>
+<li>
+<p>El código javascript se ajusta al estándar y las características
+están implementadas en, al menos, tres navegadores en su última
+versión oficial. En caso de duda, se toma como referencia la
+información ofrecida por <a href="https://caniuse.com/">caniuse.com</a></p>
+</li>
+</ul>
+<h2>Autoevaluación</h2>
+<p>Para realizar una autoevaluación de esta tarea, puedes guiarte por las
+tablas de las tareas anteriores y la siguiente tabla:</p>
+<table>
+<thead>
+<tr>
+<th>Criterios</th>
+<th>Nivel</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>Bueno</td>
+<td>Inadecuado</td>
+</tr>
+<tr>
+<td>Cumple los requisitos de la lista proporcionada</td>
+<td>Cumple todos los requisitos</td>
+<td>No cumple algún requisito</td>
+</tr>
+<tr>
+<td>La implementación sigue el diseño de la interface</td>
+<td>La interface de la aplicación implementada coincide con el diseño de la interface</td>
+<td>Existen discrepancias entre el diseño de la interface y la implementación</td>
+</tr>
+<tr>
+<td>La aplicación gestiona los errores</td>
+<td>La aplicación captura los errores e informa convenientemente a la usuaria</td>
+<td>Los errores provoca mal funcionamiento de la aplicación, son ignorados o no se informa convenientemente a la usuaria</td>
+</tr>
+<tr>
+<td>La aplicación gestiona los fallos humanos</td>
+<td>La UX es optima cuando se introducen errores en los formularios</td>
+<td>Los errores en los formularios no se tratan convenientemente</td>
+</tr>
+<tr>
+<td>La implementación es correcta</td>
+<td>Se ejecuta sin fallos en todos los casos</td>
+<td>La ejecución falla para algún caso</td>
+</tr>
+<tr>
+<td>La implementación es estándar</td>
+<td>El código html es html5</td>
+<td>El validador informa de errores en el html</td>
+</tr>
+<tr>
+<td>La implementación es <em>cross-browser</em></td>
+<td>El código javascript funciona en la mayoría de navegadores</td>
+<td>Se usan características no implementadas en los navegadores actuales</td>
+</tr>
+</tbody>
+</table>
+<h2>Recursos</h2>
+<p>La B.D. y el servidor asociado son los mismos que en las prácticas anteriores. No
+obstante, como es habitual en la vida del software, desde el comienzo del cuatrimestre
+se han liberado versiones nuevas. Por tanto, si no has actualizado a la última versión,
+este es el momento de hacer un <em>pull</em> del repositorio para obtener dicha versión. A
+continuación, como los contenerdores docker tienen una versión antigua, tendrás que
+borrarlos y volver a crearlos con la nueva.</p>
+<p>También necesitarás un serivdor web que, como mínimo, sirva los documentos html, css
+y el código javascript. Como es habitual en una aplicación web, es muy probable que
+el código javascript tenga problemas para acceder a otros servidores (en tu caso, el
+servidor de la B.D.). Así que a mayores el servidor web tendrá que responder a las
+peticiones del código javascript y consultar la B.D. en su lugar. Teniendo esto en
+cuenta, elige el servidor web o framework que consideres oportuno para implementar
+la parte de backend de la aplicación.</p>
+<p><a href="../tarea_3" class="paper-btn">Siguiente: Tarea 3</a></p>
+
+</article>
+
+<!-- Content
+<section>
+  <header class="main">
+    <h1>Tarea 2: Implementar contenido y funcionalidad</h1>
+  </header>
+
+  <span class="image main"><img src="..//img/pexels-pixabay-270557.jpg" alt="" /></span>
+  
+  <p>En esta tarea tienes que realizar una parte importante de la
+implementación de la aplicación.</p>
+<blockquote>
+<p>Recuerda: El desarrollo software es un proceso iterativo. Es normal
+que durante la realización de esta tarea decidas añadir, eliminar o
+modificar partes del diseño de la interface. Si es el caso, no te
+olvides de actualizar los ficheros correspondendientes.</p>
+</blockquote>
+<p>Para esta tarea implementarás:</p>
+<ul>
+<li>
+<p>Estructura y contenido de la interface. Es decir los documentos
+html que conforman la vista de la aplicación.</p>
+</li>
+<li>
+<p>Funcionalidad: el código javascript correspondiente a la parte
+del cliente, es decir, el navegador.</p>
+</li>
+</ul>
+<p>No incluyas ningún elemento de estilo (css). Tampoco puedes usar
+ninguna librería, framework, ...</p>
+<h2>Requisitos</h2>
+<p>Tienes que cumplir los requisitos indicados en los apartados y tareas
+anteriores, y además:</p>
+<ul>
+<li>
+<p>No usar ningún librería, framework, ...</p>
+</li>
+<li>
+<p>Los documentos html cumplen el estándar html5. El validador del
+W3C no detecta ningún error.</p>
+</li>
+<li>
+<p>El código javascript se ajusta al estándar y las características
+están implementadas en, al menos, tres navegadores en su última
+versión oficial. En caso de duda, se toma como referencia la
+información ofrecida por <a href="https://caniuse.com/">caniuse.com</a></p>
+</li>
+</ul>
+<h2>Autoevaluación</h2>
+<p>Para realizar una autoevaluación de esta tarea, puedes guiarte por las
+tablas de las tareas anteriores y la siguiente tabla:</p>
+<table>
+<thead>
+<tr>
+<th>Criterios</th>
+<th>Nivel</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>Bueno</td>
+<td>Inadecuado</td>
+</tr>
+<tr>
+<td>Cumple los requisitos de la lista proporcionada</td>
+<td>Cumple todos los requisitos</td>
+<td>No cumple algún requisito</td>
+</tr>
+<tr>
+<td>La implementación sigue el diseño de la interface</td>
+<td>La interface de la aplicación implementada coincide con el diseño de la interface</td>
+<td>Existen discrepancias entre el diseño de la interface y la implementación</td>
+</tr>
+<tr>
+<td>La aplicación gestiona los errores</td>
+<td>La aplicación captura los errores e informa convenientemente a la usuaria</td>
+<td>Los errores provoca mal funcionamiento de la aplicación, son ignorados o no se informa convenientemente a la usuaria</td>
+</tr>
+<tr>
+<td>La aplicación gestiona los fallos humanos</td>
+<td>La UX es optima cuando se introducen errores en los formularios</td>
+<td>Los errores en los formularios no se tratan convenientemente</td>
+</tr>
+<tr>
+<td>La implementación es correcta</td>
+<td>Se ejecuta sin fallos en todos los casos</td>
+<td>La ejecución falla para algún caso</td>
+</tr>
+<tr>
+<td>La implementación es estándar</td>
+<td>El código html es html5</td>
+<td>El validador informa de errores en el html</td>
+</tr>
+<tr>
+<td>La implementación es <em>cross-browser</em></td>
+<td>El código javascript funciona en la mayoría de navegadores</td>
+<td>Se usan características no implementadas en los navegadores actuales</td>
+</tr>
+</tbody>
+</table>
+<h2>Recursos</h2>
+<p>La B.D. y el servidor asociado son los mismos que en las prácticas anteriores. No
+obstante, como es habitual en la vida del software, desde el comienzo del cuatrimestre
+se han liberado versiones nuevas. Por tanto, si no has actualizado a la última versión,
+este es el momento de hacer un <em>pull</em> del repositorio para obtener dicha versión. A
+continuación, como los contenerdores docker tienen una versión antigua, tendrás que
+borrarlos y volver a crearlos con la nueva.</p>
+<p>También necesitarás un serivdor web que, como mínimo, sirva los documentos html, css
+y el código javascript. Como es habitual en una aplicación web, es muy probable que
+el código javascript tenga problemas para acceder a otros servidores (en tu caso, el
+servidor de la B.D.). Así que a mayores el servidor web tendrá que responder a las
+peticiones del código javascript y consultar la B.D. en su lugar. Teniendo esto en
+cuenta, elige el servidor web o framework que consideres oportuno para implementar
+la parte de backend de la aplicación.</p>
+<p><a href="../tarea_3" class="paper-btn">Siguiente: Tarea 3</a></p>
+
+  
+</section>
+	-->
+
+
+
+    <!-- Footer -->
+    <footer id="footer">
+      <p>&copy; David Cabrero. All rights reserved. Images: <a href="https://www.pexels.com/es-es/foto/monitor-que-muestra-texto-de-error-270557/">Pixabay</a>. CSS: <a href="https://www.getpapercss.com/">Paper CSS</a>.</p>
+    </footer>
+
+  </div>
+</div>
+
+
+</body>
+
+
+</html>

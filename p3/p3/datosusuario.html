@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/datosusuario.css" media="screen">
+  <title>insertAdjacentHTML() Demo</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+  <script src="js/main.js"></script>
+</head>
+<body>
+
+<div id="block_container">
+
+
+  <div class="two">
+    <div class="card" id="bloc1">
+  <div class="QRWrapper">
+    <div class="QRWrapperInner">
+      <div class="qr-code-result">
+        <canvas id="qr-code"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* JS comes here */
+    var qr;
+    (function() {
+      qr = new QRious({
+        element: document.getElementById('qr-code'),
+        foreground: '#000000',
+        background:'#ffffff',
+        size: 200,
+        value: "{"+localStorage.uuid+","+localStorage.name+","+localStorage.surname+"}"
+      });
+    })();
+
+  </script>
+  <div class="nombre"> <ul id="listh1">
+  </ul>
+  </div>
+  <div class="title">
+    <ul id="listtitle">
+    </ul>
+  </div>
+
+</div></div>
+<div class="four">
+  <div class="card">
+  <h2>Datos del usuario:</h2>
+<ul id="list">
+</ul>
+
+
+<script>
+  let list = document.querySelector('#list');
+  let listh1 = document.querySelector('#listh1');
+  let listtitle = document.querySelector('#listtitle');
+  let dato0 = localStorage.getItem('name')+" "+localStorage.getItem('surname');
+  let dato1 = localStorage.getItem('uuid');
+  let dato2 = "Login: "+localStorage.getItem('username');
+  let dato4 = "Teléfono: "+localStorage.getItem('telephone');
+
+  let dato5 = "Email: "+localStorage.getItem('email');
+  let dato6 = "Vacunado: "+localStorage.getItem('vacunado');
+
+
+  list.insertAdjacentHTML('afterend','<p>');
+  list.insertAdjacentHTML('afterend', dato6);
+  list.insertAdjacentHTML('afterend','<p>');
+  list.insertAdjacentHTML('afterend', dato5);
+  list.insertAdjacentHTML('afterend','<p>');
+  list.insertAdjacentHTML('afterend', dato4);
+  list.insertAdjacentHTML('afterend','<p>');
+  list.insertAdjacentHTML('afterend', dato2);
+  list.insertAdjacentHTML('afterend','<p>');
+  listtitle.insertAdjacentHTML('afterend',dato1);
+  listh1.insertAdjacentHTML('afterend',dato0);
+
+
+</script>
+  <p><button onclick="volveratras()">
+     Volver Atrás
+  </button></p>
+</div>
+  </div>
+  <div class="one">
+    <div class="card">
+      <div class="qr">
+        <div>ÚLTIMOS ACCESOS DE ENTRADA: </div>
+      </div>
+
+      <div class="qr">
+        <ul id="listentrada">
+
+        </ul>
+      </div>
+      <div class="qr">
+        <ul id="listentrada2">
+
+        </ul>
+      </div>
+      <div class="qr">
+        <ul id="listentrada3">
+
+        </ul>
+      </div>
+      <div class="qr">
+        <ul id="listentrada4">
+
+        </ul>
+      </div>
+      <ul id="listentrada5">
+
+      </ul>
+
+
+      <script>
+        let listentrada = document.querySelector('#listentrada');
+        let listentrada2 = document.querySelector('#listentrada2');
+        let listentrada3 = document.querySelector('#listentrada3');
+        let listentrada4 = document.querySelector('#listentrada4');
+        let listentrada5 = document.querySelector('#listentrada5');
+        accesos=localStorage.nentrada;
+        if(accesos>0) {
+          listentrada.insertAdjacentHTML('afterend', '<p>');
+          listentrada.insertAdjacentHTML('afterend', localStorage.lentrada);
+          listentrada.insertAdjacentHTML('afterend', '<p>');
+          listentrada.insertAdjacentHTML('afterend', localStorage.entrada);
+          if(accesos>1){
+            listentrada2.insertAdjacentHTML('afterend', '<p>');
+            listentrada2.insertAdjacentHTML('afterend', localStorage.lentrada2);
+            listentrada2.insertAdjacentHTML('afterend', '<p>');
+            listentrada2.insertAdjacentHTML('afterend', localStorage.entrada2);
+            if(accesos>2){
+              listentrada3.insertAdjacentHTML('afterend', '<p>');
+              listentrada3.insertAdjacentHTML('afterend', localStorage.lentrada3);
+              listentrada3.insertAdjacentHTML('afterend', '<p>');
+              listentrada3.insertAdjacentHTML('afterend', localStorage.entrada3);
+              if(accesos>3){
+                listentrada4.insertAdjacentHTML('afterend', '<p>');
+                listentrada4.insertAdjacentHTML('afterend', localStorage.lentrada4);
+                listentrada4.insertAdjacentHTML('afterend', '<p>');
+                listentrada4.insertAdjacentHTML('afterend', localStorage.entrada4);
+                if(accesos>4){listentrada5.insertAdjacentHTML('afterend', " .");
+                  listentrada5.insertAdjacentHTML('afterend', '<p>');
+                  listentrada5.insertAdjacentHTML('afterend', localStorage.lentrada5);
+                  listentrada5.insertAdjacentHTML('afterend', '<p>');
+                  listentrada5.insertAdjacentHTML('afterend', localStorage.entrada5);
+                }
+              }
+            }
+          }
+        }else{
+          listentrada.insertAdjacentHTML('afterend', '<p>');
+          listentrada.insertAdjacentHTML('afterend', "No hay accesos de entrada");
+        }
+
+
+      </script>
+
+    </div>
+  </div>
+  <div class="three">
+<div class="card" id="bloc3">
+  <div class="qr">
+    <div>ÚLTIMOS ACCESOS DE SALIDA: </div>
+  </div>
+
+  <div class="qr">
+    <ul id="listsalida">
+
+    </ul>
+  </div>
+  <div class="qr">
+    <ul id="listsalida2">
+
+    </ul>
+  </div>
+  <div class="qr">
+    <ul id="listsalida3">
+
+    </ul>
+  </div>
+  <div class="qr">
+    <ul id="listsalida4">
+
+    </ul>
+  </div>
+  <ul id="listsalida5">
+
+  </ul>
+
+
+  <script>
+    let listsalida = document.querySelector('#listsalida');
+    let listsalida2 = document.querySelector('#listsalida2');
+    let listsalida3 = document.querySelector('#listsalida3');
+    let listsalida4 = document.querySelector('#listsalida4');
+    let listsalida5 = document.querySelector('#listsalida5');
+    accesos=localStorage.nsalida;
+    if(accesos>0) {
+      listsalida.insertAdjacentHTML('afterend', '<p>');
+      listsalida.insertAdjacentHTML('afterend', localStorage.lsalida);
+      listsalida.insertAdjacentHTML('afterend', '<p>');
+      listsalida.insertAdjacentHTML('afterend', localStorage.salida);
+      if(accesos>1){
+        listsalida2.insertAdjacentHTML('afterend', '<p>');
+        listsalida2.insertAdjacentHTML('afterend', localStorage.lsalida2);
+        listsalida2.insertAdjacentHTML('afterend', '<p>');
+        listsalida2.insertAdjacentHTML('afterend', localStorage.salida2);
+        if(accesos>2){
+          listsalida3.insertAdjacentHTML('afterend', '<p>');
+          listsalida3.insertAdjacentHTML('afterend', localStorage.lsalida3);
+          listsalida3.insertAdjacentHTML('afterend', '<p>');
+          listsalida3.insertAdjacentHTML('afterend', localStorage.salida3);
+          if(accesos>3){
+            listsalida4.insertAdjacentHTML('afterend', '<p>');
+            listsalida4.insertAdjacentHTML('afterend', localStorage.lsalida4);
+            listsalida4.insertAdjacentHTML('afterend', '<p>');
+            listsalida4.insertAdjacentHTML('afterend', localStorage.salida4);
+            if(accesos>4){listsalida5.insertAdjacentHTML('afterend', ".");
+              listsalida5.insertAdjacentHTML('afterend', '<p>');
+              listsalida5.insertAdjacentHTML('afterend', localStorage.lsalida5);
+              listsalida5.insertAdjacentHTML('afterend', '<p>');
+              listsalida5.insertAdjacentHTML('afterend', localStorage.salida5);
+            }
+          }
+        }
+      }
+    }else{
+      listsalida.insertAdjacentHTML('afterend', '<p>');
+      listsalida.insertAdjacentHTML('afterend', "No hay accesos de salida");
+    }
+
+
+  </script>
+</div>
+</div>
+</div>
+</body>
+</html>

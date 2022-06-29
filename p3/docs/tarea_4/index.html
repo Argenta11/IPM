@@ -1,0 +1,207 @@
+<!doctype html>
+
+<html lang="es">
+
+  
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Enunciado de la práctica">
+  <meta name="author" content="David Cabrero Souto">
+
+  <title>Tarea 4: Accesibilidad</title>
+
+  <link href="../css/paper.min.css" rel="stylesheet">
+  <!-- workaround para no modificar paper.css -->
+  <style>
+  li > p:first-child { display: inline; }
+
+  nav a { border: 0; }
+  .nav-brand img { border: 0; height: 1em; }
+  </style>
+</head>
+
+
+<body class="is-preload">
+     
+<!-- Wrapper -->
+<div class="paper">
+  <!-- Main -->
+  <div class="paper container margin-bottom-large">
+    <nav class="border">
+      <div class="nav-brand">
+        <h3>
+          <a href="https://campusvirtual.udc.gal/course/view.php?id=14842"><img src="../img/logo.png"/></a></li>
+        </h3>
+      </div>
+      <div class="collapsible-body">
+        <ul class="inline">
+          <li>
+            <a href="/"><strong>IPM 2020/2021</strong> Práctica 3</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Header -->
+    <header id="header">
+      
+    </header>
+
+
+    <article class="article">
+  <h1 class="article-title">Tarea 4: Accesibilidad</h1>
+  <span class="image main"><img src="..//img/pexels-ron-lach-9783348.jpg" alt="" /></span>
+  <p>En esta tarea tienes que corregir la aplicación para que ofrezca la
+mayor accesibilidad posible.</p>
+<blockquote>
+<p>Recuerda: El desarrollo software es un proceso iterativo. Es normal
+que durante la realización de esta tarea decidas añadir, eliminar o
+modificar partes del diseño de la interface o de la implementación
+anterior. Si es el caso, no te olvides de actualizar los ficheros
+correspondendientes.</p>
+</blockquote>
+<p>Crea un fichero <code>a11y.pdf</code> y anota en él todas las decisiones
+adoptadas en materia de accesibilidad y los cambios que aplicas.</p>
+<p>Recuerda que existen herramientas que comprueban de manera automática
+la accesibilidad de una página web. Sin embargo, los resultados aunque
+resultan de gran utilidad, no son concluyentes ya que existen aspectos
+que no es posible validar de manera automática y deben validarse
+manualmente.</p>
+<p>La referencia son las normas publicadas por el <em>W3C</em>.  Tanto para la
+accesibilidad web en general <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">WCAG
+2</a>, como para la
+accesibilidad de aplicaciones web
+<a href="https://www.w3.org/WAI/standards-guidelines/aria/">WAI-ARIA</a>.</p>
+<h2>Requisitos</h2>
+<p>Tienes que cumplir los requisitos indicados en los apartados y tareas
+anteriores, y además:</p>
+<ul>
+<li>La aplicación se ajusta a las recomendaciones del W3C WAI.</li>
+</ul>
+<h2>Autoevaluación</h2>
+<p>Para realizar una autoevaluación de esta tarea, puedes guiarte por las
+tablas de las tareas anteriores y la siguiente tabla:</p>
+<table>
+<thead>
+<tr>
+<th>Criterios</th>
+<th>Nivel</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>Bueno</td>
+<td>Inadecuado</td>
+</tr>
+<tr>
+<td>Cumple los requisitos de la lista proporcionada</td>
+<td>Cumple todos los requisitos</td>
+<td>No cumple algún requisito</td>
+</tr>
+<tr>
+<td>El proceso está documentado</td>
+<td>La tarea está documentada en el fichero <code>a11y.pdf</code></td>
+<td>No existe el fichero o no documenta la labor realizada</td>
+</tr>
+<tr>
+<td>La implementación es accesible</td>
+<td>La aplicación es accesible, con las menos excepciones posibles</td>
+<td>En general no es accesible</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+
+<!-- Content
+<section>
+  <header class="main">
+    <h1>Tarea 4: Accesibilidad</h1>
+  </header>
+
+  <span class="image main"><img src="..//img/pexels-ron-lach-9783348.jpg" alt="" /></span>
+  
+  <p>En esta tarea tienes que corregir la aplicación para que ofrezca la
+mayor accesibilidad posible.</p>
+<blockquote>
+<p>Recuerda: El desarrollo software es un proceso iterativo. Es normal
+que durante la realización de esta tarea decidas añadir, eliminar o
+modificar partes del diseño de la interface o de la implementación
+anterior. Si es el caso, no te olvides de actualizar los ficheros
+correspondendientes.</p>
+</blockquote>
+<p>Crea un fichero <code>a11y.pdf</code> y anota en él todas las decisiones
+adoptadas en materia de accesibilidad y los cambios que aplicas.</p>
+<p>Recuerda que existen herramientas que comprueban de manera automática
+la accesibilidad de una página web. Sin embargo, los resultados aunque
+resultan de gran utilidad, no son concluyentes ya que existen aspectos
+que no es posible validar de manera automática y deben validarse
+manualmente.</p>
+<p>La referencia son las normas publicadas por el <em>W3C</em>.  Tanto para la
+accesibilidad web en general <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">WCAG
+2</a>, como para la
+accesibilidad de aplicaciones web
+<a href="https://www.w3.org/WAI/standards-guidelines/aria/">WAI-ARIA</a>.</p>
+<h2>Requisitos</h2>
+<p>Tienes que cumplir los requisitos indicados en los apartados y tareas
+anteriores, y además:</p>
+<ul>
+<li>La aplicación se ajusta a las recomendaciones del W3C WAI.</li>
+</ul>
+<h2>Autoevaluación</h2>
+<p>Para realizar una autoevaluación de esta tarea, puedes guiarte por las
+tablas de las tareas anteriores y la siguiente tabla:</p>
+<table>
+<thead>
+<tr>
+<th>Criterios</th>
+<th>Nivel</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>Bueno</td>
+<td>Inadecuado</td>
+</tr>
+<tr>
+<td>Cumple los requisitos de la lista proporcionada</td>
+<td>Cumple todos los requisitos</td>
+<td>No cumple algún requisito</td>
+</tr>
+<tr>
+<td>El proceso está documentado</td>
+<td>La tarea está documentada en el fichero <code>a11y.pdf</code></td>
+<td>No existe el fichero o no documenta la labor realizada</td>
+</tr>
+<tr>
+<td>La implementación es accesible</td>
+<td>La aplicación es accesible, con las menos excepciones posibles</td>
+<td>En general no es accesible</td>
+</tr>
+</tbody>
+</table>
+
+  
+</section>
+	-->
+
+
+
+    <!-- Footer -->
+    <footer id="footer">
+      <p>&copy; David Cabrero. All rights reserved. Images: <a href="https://www.pexels.com/es-es/foto/hombre-gente-internet-conexion-9783348/">Ron Lach</a>. CSS: <a href="https://www.getpapercss.com/">Paper CSS</a>.</p>
+    </footer>
+
+  </div>
+</div>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,108 @@
+/* TIPOS DE CONTENEDORES */
+.card {                                            /* Cada una de las secciones de datos  */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);      /* Rodeado de una sombra gris          */
+  width: 400px;                                    /* Ancho de cada una de las tarjetas   */
+  text-align: center;                              /* Texto centrado                      */
+}
+
+.qr{                                               /* Caja donde meto el QR y el nombre   */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);      /* Rodeado de una sombra gris          */
+  padding: 10px;                                   /* 10 px de márgenes                   */
+}
+button {                                           /* Botón de volver                     */
+  border: none;                                    /* Sin borde                           */
+  outline: 0;                                      /* Reborde externo al botón  0         */
+  display: inline-block;                           /* Se colocan en línea                 */
+  padding: 8px;                                    /* Margen de 8px                       */
+  color: white;                                    /* Fuente en color blanco              */
+  background-color: #000;                          /* Color de fondo (reborde) negro      */
+  text-align: center;                              /* Texto alineado en el centro         */
+  cursor: pointer;                                 /* El cursor se ve como puntero en él  */
+  width: 100%;                                     /* Ocupa el ancho entero               */
+  font-size: 1.5em;                                 /* Tamaño de la fuente 18 px           */
+}
+
+/* TIPOGRAFÍAS  */
+
+.title {                                            /* Fuente para el uuid                */
+  color: grey;                                      /* Color gris                         */
+  font-size: 1.45em;                                  /* Tamaño de fuente 18px              */
+}
+
+.nombre{
+  font-family: 'Copperplate Gothic Light', fantasy; /* Fuente del texto                   */
+  text-align: center;                               /* Texto alineado en el centro        */
+  font-size: 2em;                                   /* Tamaño de fuente 2 em              */
+}
+
+button:hover, a:hover {                            /* CAMBIA EL ESTILO CUANDO PONES CURSOR  */
+  opacity: 0.7;                                    /* Su opacidad se vuelve al 0.7          */
+}
+.negrita{                                          /* */
+  font-weight: bold;                               /* Letra en negrita                      */
+}
+
+/* DIVISIÓN DE LA INFORMACIÓN (GRID) E INFO DE CADA PARTE*/
+
+#block_container {                                 /* CONTENEDOR DE TODAS LAS TARJETAS      */
+  display: grid;                                   /* Grid para poder dividir después       */
+  grid-template-columns: repeat(3, 1fr);           /* 3 columnas del mismo tamaño           */
+  grid-template-rows: 300px auto;                  /* Primera fila de 300 px, segunda auto  */
+  grid-gap: 10px;                                  /* Distancia entre filas y columnas      */
+  justify-content: center;                         /* Se justifica al centro                */
+}
+
+.one {                                             /* CONTENEDOR 1: ACCESOS ENTRADAS        */
+  grid-column: 2;                                  /* Primera columna (a la izquierda)      */
+  grid-row: 1 / 2;                                 /* Ocupa las dos filas                   */
+}
+
+.two{                                              /* CONTENEDOR 2: QR Y NOMBRES            */
+  grid-column: 1;                                  /* Segunda columna (en el centro)        */
+  grid-row: 1;                                     /* Ocupa solo la primera fila            */
+}
+
+.three {                                           /* CONTENEDOR 3: ACCESOS SALIDAS         */
+  grid-column: 3;                                  /* Tercera columna (a la derecha)        */
+  grid-row: 1 / 2;                                 /* Ocupa las dos filas                   */
+}
+
+.four{                                             /* CONTENEDOR 4: DATOS DEL USUARIO       */
+  grid-column: 1;                                  /* Segunda columna (en el centro)        */
+  grid-row: 2;                                     /* Ocupa solo la segunda fila            */
+}
+
+/* EXCEPCIONES PARA TELÉFONOS */
+
+@media screen and (max-width: 1366px) {            /* EXCEPCIONES PARA TELEFONOS             */
+  .card {                                         /* LA FORMA DE LAS TARJETAS AHORA                  */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);   /* Siguen estando rodeados por la sombra gris      */
+    text-align: center;                           /* Sigue con el texto alineado en el centro        */
+  }
+  #block_container {                              /* El contenedor de las tarjetas                      */
+    display: grid;                                /* Sigue siendo un grid (pero ya no divide columnas)  */
+    grid-gap: 20px;                               /* Sigue distanciando por pixeles                     */
+    justify-content: center;                      /* Sigue justificando el contenido en el centro       */
+  }
+  .one {                                          /* EL CONTENEDOR CON ENTRADAS AHORA                 */
+    grid-row: 3;                                  /* Se sitúa segundo en la columna                   */
+    grid-column: 1;
+  }
+  .two{                                           /* EL CONTENEDOR DEL QR AHORA                        */
+    grid-row: 1;                                  /* Se sitúa primero en la columna                     */
+    grid-column: 1;
+  }
+  .three {                                        /* EL CONTENEDOR DE SALIDAS AHORA                     */
+    grid-row: 4;                                  /* Se sitúa 3 en la columna                           */
+    grid-column: 1;
+  }
+  .four{                                          /* EL CONTENEDOR CON DATOS DEL USUARIO AHORA         */
+    grid-row: 2;                                  /* Se sitúa al final de la columna                   */
+    grid-column: 1;
+  }
+  .title {                                            /* Fuente para el uuid                */
+    color: grey;                                      /* Color gris                         */
+    font-size: 1.2em;                                  /* Tamaño de fuente 18px              */
+  }
+}
+

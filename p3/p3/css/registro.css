@@ -1,0 +1,202 @@
+/*  TIPOS DE CONTENEDORES */
+
+*{
+  box-sizing: border-box;                             /* Para que se ajuste la pantalla al tamaño bien                */
+}
+
+body {                                                /* CUERPO DEL HTML (CONTIENE LA PÁGINA)                         */
+  background-image: url("/p3/img/background2.jpg");   /* Foto que ponemos de fondo en esta vista                      */
+  background-position: center;                        /* Situamos la foto centrada                                    */
+  background-origin: content-box;                     /* La foto se extiende por toda la caja                         */
+  background-repeat: no-repeat;                       /* La foto solo sale una vez                                    */
+  background-size: cover;                             /* El tamaño es que cubra la caja                               */
+  min-height:100vh;                                   /* Ancho mínimo 100 vh si no no cubre el alto                   */
+  font-family: 'Monaco', monospace;                   /* Fuente del texto                                             */
+}
+
+.box{                                                 /* CAJA NEGRA DEL CENTRO                                        */
+  position:absolute;                                  /* Se posiciona en relación con el body                         */
+  left:50%;                                           /* 50% a la izquierda                                           */
+  top:50%;                                            /* 50% de arriba                                                */
+  transform: translate(-50%,-50%);                    /* Se traslada para que quede ajustado                          */
+  background-color: rgba(0, 0, 0, 0.89);              /* Fondo negro                                                  */
+  border-radius:3px;                                  /* Borde de 3 px                                                */
+  padding:70px 100px;                                 /* Márgenes                                                     */
+}
+
+.input-container{                                     /* CONTENEDOR DE DONDE INTRODUCES DATOS                         */
+  position:relative;                                  /* Posición relativa a la caja negra                            */
+  margin-bottom:1em;                                  /* Margen abajo                                                 */
+}
+.input-container label{                               /* DONDE ESTÁ CADA UNA DE LAS LÍNEAS                            */
+  position:absolute;                                  /* Posición relativa al espacio anterior                        */
+  top:0;                                              /* Sin margen arriba                                            */
+  left:0;                                             /* Sin margen a la izquierda                                    */
+  font-size:1em;                                     /* Tamaño de la fuente 16 px                                    */
+  color:#fff;                                         /* Color de la fuente blanco                                    */
+  transition: all 0.5s ease-in-out;                   /* Transición lenta                                             */
+}
+.input-container input{                               /* FORMULARIO DE INTRODUCIR DATOS                               */
+  border:0;                                           /* Sin borde                                                    */
+  border-bottom:1px solid #555;                       /* Línea de abajo para indicar donde introducir datos           */
+  background:transparent;                             /* Fondo transparente                                           */
+  width:100%;                                         /* Ancho ocupa el 100% del input-container                      */
+  padding:8px 0 5px 0;                                /* Márgenes                                                     */
+  font-size:1em;                                     /* Fuente de 16 px                                              */
+  color:#fff;                                         /* Fuente de color blanco                                       */
+}
+.input-container input:focus{                         /* CUANDO APRIETAS EN EL FORMULARIO                             */
+  border:none;                                        /* No hay borde                                                 */
+  outline:none;                                       /* No hay zona externa al borde                                 */
+  border-bottom:4px solid #FE7F88;                    /* La línea aumenta de tamaño y se vuelve rosa                  */
+}
+.input-container input:focus ~ label,                 /* CUANDO INTRODUCES UN DATO                                    */
+.input-container input:valid ~ label{                 /* O ES UN DATO CORRECTO                                        */
+  top:-12px;                                          /* Subimos el texto                                             */
+  font-size:0.9em;                                     /* Reducimos su tamaño                                          */
+
+}
+.btn{                                                 /* BOTÓN DEL FORMULARIO                                         */
+  font-weight: bold;                                  /* Fuente en negrita                                            */
+  color:#ffffff;                                      /* Fuente de color blanco                                       */
+  background-color:#FE7F88;                           /* Botón de color rosa                                          */
+  outline: none;                                      /* Sin zona externa al borde                                    */
+  border: 0;                                          /* Sin borde                                                    */
+  padding:10px 20px;                                  /* Márgenes                                                     */
+  text-transform:uppercase;                           /* Todas las letras en mayúsculas                               */
+  border-radius:2px;                                  /* Borde de 2 px alrededor de las letras                        */
+  cursor:pointer;                                     /* Si pones el cursor encima es puntero                         */
+  position:relative;                                  /* Posición relativa al formulario                              */
+  text-align: center;                                 /* Texto alineado en el centro                                  */
+}
+div.boton{                                            /* Márgenes alrededor del botón                                 */
+  padding:10px 70px;
+}
+.alinear{                                             /* Para alinear los textos                                      */
+  padding: 0 200px;
+}
+
+img.logo {                                            /* IMAGEN CON FORMA DE USUARIO                                  */
+  width: 70px;                                        /* Ancho de 200 px                                              */
+  height: 70px;                                       /* Alto de 200 px                                               */
+  display: block;                                     /* Genera un cuadro de elemento de bloque                       */
+  margin-left: auto;                                  /* Se ajusta el margen izquierdo (centrar)                      */
+  margin-right: auto;                                 /* Se ajusta el margen derecho (centrar)                        */
+}
+
+/* FUENTES*/
+
+.text-center{                                         /* TEXTO DE INICIAR SESIÓN                                      */
+  color:#fff;                                         /* Fuente de color blanco                                       */
+  text-transform:uppercase;                           /* Todas en mayusculas                                          */
+  font-size: 1.5em;                                    /* Tamaño de fuente 23 px                                       */
+  margin: -50px 0 80px 0;                             /* Márgenes para ajustar que esté alineado                      */
+  display: block;                                     /* Genera un cuadro de elemento en bloque                       */
+  text-align: center;                                 /* Alinea el texto al centro                                    */
+}
+
+h2{                                                   /* FUENTE DEL TÍTULO                                            */
+  font-family: 'Copperplate Gothic Light', fantasy;   /* Tipo de fuente                                               */
+  text-align: center;                                 /* Texto alineado en el centro                                  */
+  font-size: 1.5em;                                   /* Tamaño de la fuente 2 em                                     */
+  color: #ffffff;                                     /* Color de la fuente blanco                                    */
+}
+
+p {                                                   /* LETRA PARA EL TEXTO NORMAL                                   */
+  background-image: none;                             /* Sin fondo                                                    */
+  font-size: 0.85em;                                   /* Tamaño de fuente 0.85em                                     */
+  color: #ffffff;                                     /* La fuente es de color blanco                                 */
+  background-color: transparent;                      /* Fondo transparente                                           */
+  display: block;                                     /* Genera un cuadro de elemento en bloque                       */
+  text-align: center;                                 /* Se alinean en el centro                                      */
+}
+
+a:link, a:visited {                                   /* FUENTE DEL HIPERVÍNCULO AL REGISTRO (SE HAYA IDO YA O NO)    */
+  color: #ffdbde;                                     /* Fuente de color rosa                                         */
+  padding: 10px 62px;                                 /* Márgenes alrededor                                           */
+  text-align: center;                                 /* Texto alineado en el centro                                  */
+  text-decoration: none;                              /* Sin decoración del texto                                     */
+
+}
+.error{
+  color: red;                                     /* Fuente de color rosa                                         */
+  padding: 10px 62px;                                 /* Márgenes alrededor                                           */
+  text-align: center;                                 /* Texto alineado en el centro                                  */
+  text-decoration: none;                              /* Sin decoración del texto                                     */
+
+}
+
+/* ADAPTACIÓN A DISPOSITIVOS MÓVILES  */
+@media screen and (max-width: 768px){                 /* Adaptamos para dispositivos móviles                          */
+  body {                                              /* EN EL CUERPO                                                 */
+    font-family: 'Monaco', monospace;                 /*La fuente es la misma                                         */
+    padding: 30px 30px;                               /* Márgenes para cuadrar                                        */
+    background-color: rgba(0, 0, 0, 0.89);            /* Pero cambiamos la imagen por un fondo como el cuadro         */
+  }
+  .box{                                               /* La caja negra                                                */
+    position:absolute;                                /* Sigue con una posición que depende del body                  */
+    width:100%;                                       /* El ancho ocupa el 100%                                       */
+    height: 100%;                                     /* El alto ocupa el 100%                                        */
+    background-color: rgba(0, 0, 0, 0.89);            /* Color de fondo sigue el mismo                                */
+  }
+  div.boton{                                          /* Cambiamos los márgenes                                       */
+    padding:0 50%;
+    position: relative;
+    display: inline-block;
+  }
+  .input-container{                                   /* Reducimos el margen del final del input container            */
+    position:relative;
+    margin-bottom:10%;
+  }
+  a:link, a:visited {                                 /* Cambiamos los márgenes                                       */
+    color: #ffdbde;
+    padding: 3% 0%;
+    text-align: center;
+    position: relative;
+    text-decoration: none;
+    display: block;
+  }
+  .input-container input{                            /* Disminuimos la fuente                                         */
+    border:0;
+    border-bottom:1px solid #555;
+    background:transparent;
+    width:100%;
+    padding:8px 0 5px 0;
+    font-size:0.9em;
+    color:#fff;
+  }
+  .input-container label{                           /* Disminuios la fuente                                           */
+    position:absolute;
+    top:0;
+    left:0;
+    font-size:0.9em;
+    color:#fff;
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+/* SPINNER */
+.lds-dual-ring {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin: 2px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

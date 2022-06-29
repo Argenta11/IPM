@@ -1,0 +1,66 @@
+<!doctype html>
+
+<html lang="es">
+
+  
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Enunciado de la práctica">
+  <meta name="author" content="David Cabrero Souto">
+
+  <title>{{ title }}</title>
+
+  <link href="{{page.url|baseUrl}}css/paper.min.css" rel="stylesheet">
+  <!-- workaround para no modificar paper.css -->
+  <style>
+  li > p:first-child { display: inline; }
+
+  nav a { border: 0; }
+  .nav-brand img { border: 0; height: 1em; }
+  </style>
+</head>
+
+
+<body class="is-preload">
+     
+<!-- Wrapper -->
+<div class="paper">
+  <!-- Main -->
+  <div class="paper container margin-bottom-large">
+    <nav class="border">
+      <div class="nav-brand">
+        <h3>
+          <a href="{{site.subject_url}}"><img src="{{page.url|baseUrl}}img/logo.png"/></a></li>
+        </h3>
+      </div>
+      <div class="collapsible-body">
+        <ul class="inline">
+          <li>
+            <a href="/"><strong>{{site.subject}}</strong> {{site.name}}</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Header -->
+    <header id="header">
+      
+    </header>
+
+
+    {{ content }}
+
+    <!-- Footer -->
+    <footer id="footer">
+      <p>&copy; David Cabrero. All rights reserved. Images: <a href="{{banner.copy_url}}">{{banner.copy}}</a>. CSS: <a href="https://www.getpapercss.com/">Paper CSS</a>.</p>
+    </footer>
+
+  </div>
+</div>
+
+
+</body>
+
+
+</html>

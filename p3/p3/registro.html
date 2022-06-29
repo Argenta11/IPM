@@ -1,0 +1,91 @@
+<!doctype html>
+<html class="no-js" lang="es-ES">
+
+<head>
+  <meta charset="utf-8">
+  <title>Registro</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/registro.css">
+
+  <meta name="theme-color" content="#fafafa">
+
+  <script src="js/main.js"></script>
+</head>
+
+<body>
+
+<!-- Add your site or application content here -->
+
+
+<div class="box">
+  <img src="img/logo_acceso.png" class="logo" alt="">
+
+  <h2>Registrarse</h2>
+<FORM name=form action="datosusuario.html">
+  <div class="input-container">
+    <input type="text" name=email id=email required=""/>
+    <label>Email</label>
+  </div>
+  <div class="input-container">
+   <input type="text" name=fname id=fname required=""/>
+    <label>Nombre</label>
+  </div>
+  <div class="input-container">
+    <input type="text" name=lname id=lname required=""/>
+    <label>Apellido</label>
+  </div>
+  <div class="input-container">
+    <input type=tel name=tfn id=tfn required=""/>
+    <label>Teléfono</label>
+  </div>
+  <div class="input-container">
+    <input type="text" name=login id=login required=""/>
+    <label>Usuario</label>
+  </div>
+  <div class="input-container">
+    <input type=password name=password id=password required=""/>
+    <label>Contraseña</label>
+  </div>
+  <div class="input-container">
+    <input type=password name=rpassword id=rpassword required=""/>
+    <label>Repita la contraseña</label>
+  </div>
+  <div class="input-container">
+    <input type="text" name=vacunado id=vacunado required=""/>
+    <label>Estoy vacunado (S/N)</label>
+  </div>
+  <div class="boton">
+    <INPUT class="btn" onclick="registrar(document.form.email.value,document.form.fname.value,document.form.lname.value,document.form.tfn.value,document.form.login.value,document.form.password.value,document.form.rpassword.value,document.form.vacunado.value)" type=button value=Registarse>
+    <div id=spinner class="lds-dual-ring"></div>
+  </div>
+</FORM>
+  <p>Una vez introducidos los datos presiona el botón "Acceder"</p>
+  <a href="javascript:history.back()"> Volver Atrás</a>
+  <div class="error">
+  <div style="visibility: hidden" id="error">Error: Aquí iría la advertencia</div></div>
+</div>
+<script>
+  window.onload = function (){
+    var spinner= document.getElementById("spinner");
+    spinner.style.visibility='hidden';
+    spinner.style.opacity='0';
+  }
+</script>
+<script src="js/vendor/modernizr-3.11.2.min.js"></script>
+<script src="js/plugins.js"></script>
+
+</body>
+
+</html>

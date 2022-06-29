@@ -1,0 +1,73 @@
+<!doctype html>
+<html class="no-js" lang="es-ES">
+
+<head>
+  <meta charset="utf-8">
+  <title>Iniciar Sesion</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/main.css" media="screen">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+
+  <script src="js/main.js"></script>
+</head>
+
+<body>
+<div class="box">
+  <!-- Add your site or application content here -->
+
+  <img src="img/logo_acceso.png" class="logo" alt="">
+  <h2>Iniciar sesión</h2>
+  <FORM name=form action="datosusuario.html" class="form">
+    <div class="input-container">
+      <input type="text" name=username required=""/>
+      <label>Usuario</label>
+    </div>
+    <div class="input-container">
+      <input type="password" name=password required=""/>
+      <label>Contraseña</label>
+    </div>
+    <div class="alinear">
+    <INPUT class="btn" onclick="comprobariniciosesion(document.form.username.value,document.form.password.value)" type=button value=Acceder>
+    <div id=spinner class="lds-dual-ring"></div>
+    </div>
+  </FORM>
+  <p>Una vez introducidos los datos presiona el botón "Acceder"</p>
+  <a href="registro.html">Si no posees una cuenta puedes registrarte aquí</a>
+
+  <div class="error">
+  <div style="visibility: hidden" id="error">Error: Aquí iría la advertencia </div></div>
+
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/plugins.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</div>
+
+</body>
+<script>
+  window.onload = function (){
+    var spinner= document.getElementById("spinner");
+    spinner.style.visibility='hidden';
+    spinner.style.opacity='0';
+  }
+</script>
+</html>
