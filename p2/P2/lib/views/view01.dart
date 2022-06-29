@@ -1,0 +1,98 @@
+import 'package:flutter/material.dart';
+import 'package:ipm/provider/providerinstalaciones.dart';
+import 'package:ipm/views/view02.dart';
+import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+
+class View01 extends StatefulWidget { // Vista Home de la aplicación
+
+  const View01({Key? key, required this.title}) : super(key: key);
+
+  final String title;
+
+  @override
+  State<View01> createState() => _MyHomePageState();  // Creamos un estado (Vista Stateful)
+}
+
+class _MyHomePageState extends State<View01> {
+
+  @override
+  Widget build(BuildContext context) {
+
+    final providerinst = Provider.of<ProviderInst>(context,listen: false);
+    providerinst.initdata();  // Inicializamos los datos de las instalaciones
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),  // Título de la cabecera (Accesos COVID)
+      ),
+      body: Column(
+        children: [
+          Container(
+            child: Text(
+              AppLocalizations.of(context)!.seleccionainstalacion,
+              style: Theme.of(context).textTheme.headline4,
+            ),
+          ),
+
+          Expanded(
+            child: FutureBuilder( // Widget con la lista de instalaciones
+                future: providerinst.instalacioness(),  // Depende de la lista de instalaciones del provider
+                builder: (BuildContext context, AsyncSnapshot<List<String>> snapshot) {
+                  if (snapshot.connectionState == ConnectionState.done &&
+                      !snapshot.hasError) {
+                    List<String>? data = snapshot.data; // Guardamos en data los datos de la lista
+                    return ListView.builder(
+                        itemCount: data!.length,  // Tamaño del Widget, el de la lista
+                        itemBuilder: (BuildContext context, int index) {
+                          return ListTile(  // Cada una de las casillas de la ListView
+                            onTap: () {
+                              // En estas tres lineas recogemos la instalacion para inicializar los datos de la instalacion
+                              final prep = data[index].split('(');
+                              final ins = prep[1].split(')');
+                              providerinst.initdata2(ins[0]);
+
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) =>
+                                      View02(data[index])));  // Despues accedemos a la lista 2 (lista de accesos)
+                            },
+                            title: Text(data[index]), // Nombre de la instalacion y su id
+                            leading: CircleAvatar(
+                              child: Text((index + 1).toString()),  // Le ponemos el circulo de la izquierda con el puesto en la lista
+                            ),
+                            trailing: const Icon(Icons.arrow_forward_ios),  // Icono de las flechas de la derecha
+                          );
+                        });
+                  }
+                  else if (snapshot.connectionState != ConnectionState.done) {  // En caso de que no conecte la BD, activamos el spinner
+                    return Center(
+                      child: Column(
+                        children: <Widget>[
+                          Text(snapshot.connectionState.toString()),
+                          Text(''),
+                          CircularProgressIndicator(),
+                        ],
+                      ),
+                    );
+                  }
+                  else {  // En caso de fallo de no existencia emitimos el error
+                    return Center(
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: <Widget>[
+                            Image.asset('images/snoopy-penalty-box.gif'),
+                            Text(AppLocalizations.of(context)!.errorarchivo),
+                          ],
+                        ),
+                      ),
+                    );
+                  }
+                }),
+          ),
+        ],
+      ),
+      //), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
